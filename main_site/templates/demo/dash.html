@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>DEMO PURPOSES ONLY</title>
+
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block body %}
+<div class='content'>
+    <a style='color:white;' href="{% url 'drop' %}" class="btn col-4 my-auto">Drop DB</button>
+    <a style='color:white;' href="{% url 'setup' %}" class="btn col-4 my-auto">Setup dummy DB</button>
+    <a style='color:white;' href="{% url 'new_user' %}" class="btn col-4 my-auto">Add user </bautton>
+    <a style='color:white;' href="{% url 'new_topic' %}" class="btn col-4 my-auto">Add topic</button>
+    <a style='color:white;' href="{% url 'new_lab' %}" class="btn col-4 my-auto">Add lab session</button>
+    <a style='color:white;' href="{% url 'logout' %}" class="btn col-4 my-auto">Logout</button>
+</div>
+{% endblock %}

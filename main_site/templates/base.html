@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no" />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+        />
+        <!-- Google Fonts Roboto -->
+        <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <!-- Material Design Bootstrap -->
+        <link rel="stylesheet" href="css/mdb.min.css" />
+        <!-- Your custom styles (optional) -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="css/headerFooter.css" />
+
+        {% block head %}
+        {% endblock %}
+    </head>
+    <style>
+
+	html {
+  	min-height: 100%;
+	}
+
+	body{
+      	min-height: 100%;
+      	background: linear-gradient(rgba(128,0,128,1),rgba(255, 255, 255, 0.7)),url({% static "background.jpg" %})no-repeat center center fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+
+    }
+
+    footer {
+     background-color : #FFFFFF;
+     opacity: 0.9;
+    }
+
+
+
+        .page_wrapper {
+        position: relative;
+        min-height: 100vh;
+        }
+        /* .header {
+        height: 10vh;
+        margin-bottom:25px;
+        } */
+        .button_row {
+        min-height: 100%;
+        }
+        .but {
+        min-height: 24vh;
+        }
+        .main {
+            padding-bottom: 10vh;
+            min-height: 100%;
+
+        }
+        /* .footer {
+        margin-top: 10vh;
+        clear:both;
+        bottom: 0;
+        height: 10vh;
+        width: 100%;
+        } */
+        {% block style %}
+        {% endblock %}
+    </style>
+    <body>
+        <div class="my-custom-scrollbar my-custom-scrollbar-primary">
+        {% block header %}
+        <div class="page_wrapper">
+            <div class="header ">
+              <nav class="navbar navbar-expand-lg navbar-transparent">
+              <a class="navbar-brand" style="color: #FFFFFF" href="{% url 'select_lab' %}">
+                <img src="{% static 'logo.png' %}" width="70" height="70" class="inline-block align-middle" alt="">
+                Target Acquired
+              </a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="{% static 'list_white.png' %}" width="30" height="30" alt=""></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link text-light" href="{% url 'select_lab' %}">Select a Lab</a>
+                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'about' %}">About Us</a>
+                  </li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'logout' %}">Logout</a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'portal' %}">Return to portal</a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </nav>
+            </div>
+            {% endblock %}
+            <div class="main">
+              {% block body %}
+              {% endblock %}
+            </div>
+
+          </div>
+        </div>
+        <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+        ></script>
+        <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"
+        ></script>
+        <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"
+        ></script>
+    </body>
+<footer class = "page-footer fixed-bottom font-small">
+            <div class="footer-copyright text-center text-black py-3">
+              © X2 | University of Manchester
+            </div>
+            </footer>

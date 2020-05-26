@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Logout</title>
+
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+{% block body %}
+<div class="container" style = "position: relative; top:50px;">
+
+    <p class="text-center text-light">Logout successful</p>
+
+
+    <button class="btn btn-outline-info btn-block"><a class="text-info" href="{% url 'portal' %}">Return to portal</a></button>
+
+    </div>
+
+{% endblock %}

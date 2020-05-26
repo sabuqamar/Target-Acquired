@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>DEMO PURPOSES ONLY</title>
+
+{% endblock %}
+
+{% block style %}
+* {
+    color: white;
+    }
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block body %}
+<h>{{ title }}</h>
+<p>Are you sure? </p>
+<form method='post'>
+    {% csrf_token %}
+    <div class="col-auto my-4 mx-auto">
+        <button type="submit" name="yes" class="btn btn-primary mx-auto">YES</button>
+        <button type="submit" name="no" class="btn btn-primary mx-auto">NO</button>
+    </div>
+</form>
+
+{% endblock %}

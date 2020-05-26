@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+    {% block head %}
+    <title>Choose your lab session</title>
+
+    {% endblock %}
+
+    {% block style %}
+    select{
+        width: 99%;
+    }
+    .btn{
+        opacity: .9;
+    }
+
+    {% endblock %}
+
+    {% block body %}
+    <form method="post" class="text-center text-light border border-light p-5 h-80 w-50 mx-auto my-6">
+        {% csrf_token %}
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label for="lab_session">Please select a lab session: </label>
+                {{ form.lab_session }}
+            </div>
+            <div class="col-auto my-4 mx-auto">
+                <button type="submit" name="submit" class="btn btn-primary mx-auto">Select</button>
+            </div>
+        </div>
+    </form>
+    {% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+    {% block head %}
+    <title>Ask question</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+        />
+        <!-- Google Fonts Roboto -->
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <!-- Material Design Bootstrap -->
+        <link rel="stylesheet" href="css/mdb.min.css" />
+        <!-- Your custom styles (optional) -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        />
+
+    {% endblock %}
+
+    {% block style %}
+
+        .heading_title {
+        <!--border: 1px solid #FFFFFF;-->
+        <!--background-color: #FFFFFF;-->
+        font-weight: bold;
+        font-family: "Times New Roman", Times, serif;
+        text-decoration: underline;
+
+        text-align: centre;
+        font-size: 40px;
+        width: 95%;
+        height: 20%;
+        }
+      .button_row {
+        height: 100%;
+      }
+      .btn {
+        height: 10vh;
+        width: 16vh;
+        opacity: .9;
+
+      }
+    {% endblock %}
+
+    {% block body %}
+    <form method="post" class="text-center text-light border border-light p-5 h-80 w-50 mx-auto my-6">
+    {% csrf_token %}
+    <h1 style='color:white;'>{{lab}}</h1>
+    <!--<div class="button_row row justify-content-around">-->
+        <div class="row no-gutters">
+        <div class="col no-gutters">
+        <div class="rightside">
+            <div class="button_row row justify-content-around">
+        <div class="heading_title">Get marked</div>
+        <button type="submit" name="mark" class="btn btn-primary my-4">Marking</button>
+        </div>
+        </div>
+        </div>
+        <div class="col no-gutters">
+         <div class="leftside">
+        <div class="button_row row justify-content-around">
+        <div class="heading_title">Ask a question</div>
+        <button type="submit" name="question" class="btn btn-primary my-4">Question</button>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    </form>
+    {% endblock %}

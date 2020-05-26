@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+{% block header %}{% endblock %}
+{% block body %}
+<!-- Default form login -->
+<form class="text-center border border-light mx-4 p-5 w-75 h-50 mx-auto my-10" method="post" action="{% url 'portal' %}">
+
+    <p class="h4 mb-4 text-light">Sign in as a TA</p>
+
+    {% csrf_token %}
+    <!-- Email -->
+    <input type="username" id="id_username" name = "username" class="form-control mb-4" placeholder="Username">
+
+    <!-- Password -->
+    <input type="password" id="id_password" class="form-control mb-4" name='password' placeholder="Password">
+
+    <!-- Sign in button -->
+    <button class="btn btn-primary my-4" type="submit">Sign in</button>
+
+    {% if form.errors %}
+        <p class=" label label-danger text-warning">
+            Your username and password didn't match.
+            Please try again.
+        </p>
+    {% endif %}
+    <p class="text-light text-monospace"> or </p>
+    <a href="{% url 'select_lab_student' %}" class="btn btn-primary my-2">Continue as student</a>
+
+
+</form>
+{% endblock %}

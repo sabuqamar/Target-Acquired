@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+    {% block head %}
+    <title>Helping user</title>
+
+    {% endblock %}
+
+    {% block style %}
+
+    {% endblock %}
+
+    {% block body %}
+    <form class="text-center border border-light mx-4 p-5 w-75 h-50 mx-auto my-10" method="post">
+
+    <h1 class="h4 mb-4 text-light">{{ student }}</h1>
+
+
+    <p class="text-light mb-4"> {{ problem }} </p>
+
+    {% csrf_token %}
+        <div class="button_row row justify-content-around">
+            <button type="submit" name="complete" class="btn btn-primary mb-3">Complete</button>
+            <button type="submit" name="help" class="btn btn-primary mb-3">Additional help required</button>
+            <button type="submit" name="give_up" class="btn btn-primary mb-3">Can't help</button>
+
+            <!--<a href="{% url 'select_student' %}" class="btn btn-primary my-2">Complete</a>-->
+            <!--<a href="{% url 'select_student' %}" class="btn btn-primary my-2">Additional help required</a>-->
+            <!--<a href="{% url 'select_student' %}" class="btn btn-primary my-2">Can't help</a>-->
+            <!--<button name="mark" class="btn col-4 my-auto" href="{% url 'select_lab_student' %}">Complete</button>-->
+            <!--<button name="question" class="btn col-4 my-auto">Additional help required</button>-->
+            <!--<button name="question" class="btn col-4 my-auto">Can't help</button>-->
+        </div>
+
+
+</form>
+
+
+    {% endblock %}
